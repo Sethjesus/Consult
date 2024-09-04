@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,21 +52,20 @@
         }
 
         footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 10px;
+            justify-content: space-between; /* 內容和按鈕左右分布 */
+            align-items: center; /* 垂直置中 */
+            padding: 10px 20px;
             background-color: #2c3e50;
             color: #ffffff;
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%; /* 設置寬度為 100% */
         }
 
         .footer-content {
             text-align: center;
-            flex: 1;
+            flex-grow: 1;
         }
 
         .back-button {
@@ -78,7 +77,7 @@
             border-radius: 5px;
             text-decoration: none;
             transition: background-color 0.3s ease;
-            margin-left: auto;
+            margin-right: 40px; /* 讓按鈕從右邊縮回來 */
         }
 
         .back-button:hover {
