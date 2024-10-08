@@ -26,7 +26,7 @@
             margin: 20px auto;
             border-collapse: collapse;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.0);
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.6);
             border-radius: 10px;
         }
 
@@ -43,21 +43,25 @@
         }
 
         th, td {
-            padding: 15px;
+            border: 1px solid #ccc;
+            padding: 8px;
             text-align: left;
-            transition: background-color 0.3s ease, transform 0.3s ease;
         }
-
         th {
-            background-color: rgba(220, 220, 220, 0.8);
-            font-size: 1.8em; /* 明顯比內容字體大 */
-            letter-spacing: 1px;
+            background-color: #007bff;
+            color: white;
+            font-size: 1.5em; /* 項目欄字體增大 */
         }
 
         td {
             background-color: rgba(245, 245, 245, 0.8);
             color: #333;
             font-size: 1.1em; /* 內容區塊字體大小 */
+        }
+        .highlight {
+            font-size: 24px; /* 調整字體大小 */
+            font-weight: bold; /* 加粗字體 */
+            color: #071a2e; /* 字體顏色 */
         }
 
         tr:hover td {
@@ -113,11 +117,16 @@
             <th>內容</th>
         </tr>
         <tr>
-            <td>0.1 諮詢輔導</td>
+           <td class="content-left">
+           <p class="highlight">0.1 諮詢輔導</p>
+            </td>
             <td>a. 企業ESG永續發展先期輔導諮詢<br>b. 低碳化輔導評估</td>
-        </tr>
+        </tr>      
+                   
+                   
         <tr>
-            <td>0.2 綠色辦公響應作法</td>
+            <td class="content-left">
+            <p class="highlight">0.2 綠色辦公響應作法</p></td>
             <td>a. 環境部綠色辦公響應作法<br>
                 <a href="https://greenlifestyle.moenv.gov.tw/categories/green_office/steps" target="_blank">綠色辦公響應指標及措施</a>
             </td>
