@@ -1,166 +1,263 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>皓樣諮詢輔導</title>
-    <style>
-        body {
-            background-image: url('https://github.com/Sethjesus/Photo/blob/main/sky3.jpg?raw=true');
-            background-size: 100%;
-            background-position: cover;
-            background-attachment: fixed;
-            font-family: Arial, sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>皓樣諮詢輔導</title>
 
-        h1 {
-            text-align: center;
-            margin-top: 20px;
-            color: #007bff;
-            font-size: 48px;
-            text-shadow: 2px 2px 5px rgba(0, 255, 0, 0.9); /* 亮綠色陰影 */
-        }
+<style>
+/* ===== 全域 ===== */
+html, body {
+    margin: 0;
+    padding: 0;
+}
 
-        table {
-            width: 80%;
-            margin: 20px auto;
-            border-collapse: collapse;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.0);
-            background-color: rgba(255, 255, 255, 0.6);
-            border-radius: 10px;
-        }
+body {
+    min-height: 100vh;
+    background-image: url('https://github.com/Sethjesus/Photo/blob/main/sky3.jpg?raw=true');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    color: #0f172a;
+    padding-bottom: 120px; /* 避免浮動按鈕與 footer 擋內容 */
+}
 
-        colgroup col {
-            border: 1px solid #ccc;
-        }
-
-        colgroup .narrow {
-            width: 30%;
-        }
-
-        colgroup .wide {
-            width: 70%;
-        }
-
-        th, td {
-            border: 1px solid #ccc;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #007bff;
-            color: white;
-            font-size: 1.5em; /* 項目欄字體增大 */
-        }
-
-        td {
-            background-color: rgba(245, 245, 245, 0.8);
-            color: #333;
-            font-size: 1.1em; /* 內容區塊字體大小 */
-        }
-        .highlight {
-            font-size: 24px; /* 調整字體大小 */
-            font-weight: bold; /* 加粗字體 */
-            color: #071a2e; /* 字體顏色 */
-        }
-
-        tr:hover td {
-            background-color: rgba(224, 224, 224, 0.8);
-            transform: scale(1.02);
-        }
-
-        footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: rgba(44, 62, 80, 0.9);
-            color: #ffffff;
-        }
-
-        .footer-content {
-            text-align: center;
-            flex-grow: 1;
-        }
-
-        .back-button {
-            padding: 10px 20px;
-            font-size: 16px;
-            color: #ffffff;
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-            margin-right: 40px;
-        }
-
-        .back-button:hover {
-            background-color: #0056b3;
-        }
-        /* 左上角 logo */
+/* ===== 呼吸 Logo ===== */
 .logo {
-    position: absolute;   /* 固定在頁面左上角 */
-    top: 15px;
-    left: 15px;
+    position: fixed;
+    top: 14px;
+    left: 14px;
     width: 60px;
-    animation: floatLogo 3s ease-in-out infinite; /* 動態效果 */
+    z-index: 999;
+    animation: breathe 4s ease-in-out infinite;
+    filter: drop-shadow(0 6px 16px rgba(0,0,0,.35));
 }
 
-@keyframes floatLogo {
-    0% { transform: scale(1) translateY(0px); }
-    50% { transform: scale(1.1) translateY(-5px); }
-    100% { transform: scale(1) translateY(0px); }
+@keyframes breathe {
+    0%   { transform: scale(1); opacity: .95; }
+    50%  { transform: scale(1.08); opacity: 1; }
+    100% { transform: scale(1); opacity: .95; }
 }
 
-    </style>
+/* ===== 標題 ===== */
+h1 {
+    text-align: center;
+    margin: 28px 0 24px;
+    font-size: 48px;
+    font-weight: 800;
+    color: #0b5ed7;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 6px rgba(0, 255, 0, 0.65);
+}
+
+/* ===== 表格容器 ===== */
+.table-wrap {
+    width: min(1100px, 92vw);
+    margin: 0 auto;
+}
+
+/* ===== 表格 ===== */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: rgba(255,255,255,0.78);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 16px;
+    box-shadow: 0 18px 40px rgba(0,0,0,.18);
+    overflow: hidden;
+}
+
+th, td {
+    padding: 16px 20px;
+    text-align: left;
+}
+
+th {
+    background: linear-gradient(0deg, #0b6bff, #084fbe);
+    color: #fff;
+    font-size: 18px;
+}
+
+td {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #1f2937;
+    border-top: 1px solid rgba(0,0,0,.08);
+}
+
+/* 左欄項目 */
+.content-left .highlight {
+    font-size: 20px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+/* Hover（不抖動） */
+tbody tr:hover td {
+    background-color: rgba(240, 248, 255, 0.8);
+}
+
+/* 連結 */
+a {
+    color: #0b5ed7;
+    font-weight: 700;
+    text-decoration: none;
+    position: relative;
+}
+
+a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 2px;
+    background: currentColor;
+    transition: width .25s ease;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+/* ===== Footer（僅保留品牌） ===== */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background: rgba(44, 62, 80, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    z-index: 100;
+    font-size: 14px;
+}
+
+/* ==============================
+   共用浮動回首頁 Home Button
+   ============================== */
+.float-home-btn{
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+
+    width: 64px;
+    height: 72px;
+    border-radius: 18px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    color: #eff6ff;
+    text-decoration: none;
+    font-weight: 700;
+
+    background: linear-gradient(135deg, #0b6bff, #00c6ff);
+    box-shadow: 0 14px 30px rgba(11,107,255,.45);
+
+    z-index: 9999;
+    transition: transform .2s ease,
+                box-shadow .2s ease,
+                filter .2s ease;
+}
+
+.float-home-btn .icon{
+    font-size: 24px;
+    line-height: 1;
+}
+
+.float-home-btn .label{
+    font-size: 12px;
+    line-height: 1;
+    opacity: .95;
+}
+
+.float-home-btn:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(11,107,255,.55);
+    filter: brightness(1.08);
+}
+
+/* ===== RWD ===== */
+@media (max-width: 768px) {
+    h1 { font-size: 36px; }
+    th, td { padding: 14px 16px; }
+
+    .float-home-btn{
+        width: 56px;
+        height: 64px;
+        right: 16px;
+        bottom: 16px;
+    }
+    .float-home-btn .icon{ font-size: 22px; }
+    .float-home-btn .label{ font-size: 11px; }
+}
+</style>
 </head>
+
 <body>
-  <h1><img src="https://github.com/Sethjesus/Photo/blob/main/UDM%20New%20Logo.jpg?raw=true" 
-     alt="公司Logo" class="logo"></h1>
 
-  <h1>諮詢輔導</h1>
+<!-- Logo -->
+<img src="https://github.com/Sethjesus/Photo/blob/main/UDM%20New%20Logo.jpg?raw=true"
+     alt="公司 Logo"
+     class="logo">
 
-    <table>
-        <colgroup>
-            <col class="narrow">
-            <col class="wide">
-        </colgroup>
-        <tr>
-            <th>項目</th>
-            <th>內容</th>
-        </tr>
-        <tr>
-           <td class="content-left">
-           <p class="highlight">0.1 諮詢輔導</p>
-            </td>
-            <td>a. 企業ESG永續發展先期輔導諮詢<br>b. 低碳化輔導評估</td>
-        </tr>      
-                   
-                   
-        <tr>
-            <td class="content-left">
-            <p class="highlight">0.2 綠色辦公響應作法</p></td>
-            <td>a. 環境部綠色辦公響應作法<br>
-                <a href="https://greenlifestyle.moenv.gov.tw/categories/green_office/steps" target="_blank">綠色辦公響應指標及措施</a>
-            </td>
-        </tr>
-        
-        <tr>
-            <td></td>
-            <td></td>
-        </tr>
-    </table>
+<h1>諮詢輔導</h1>
 
-    <footer>
-        <div class="footer-content">© 2025 由景煬低碳管理方案團隊製作</div>
-        <a href="https://jpesg.netlify.app/" class="back-button">回首頁</a>
-    </footer>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+    <th style="width:30%;">項目</th>
+    <th style="width:70%;">內容</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+    <td class="content-left">
+        <p class="highlight">0.1 諮詢輔導</p>
+    </td>
+    <td>
+        a. 企業 ESG 永續發展先期輔導諮詢<br>
+        b. 低碳化輔導評估
+    </td>
+</tr>
+
+<tr>
+    <td class="content-left">
+        <p class="highlight">0.2 綠色辦公響應作法</p>
+    </td>
+    <td>
+        a. 環境部綠色辦公響應作法<br>
+        <a href="https://greenlifestyle.moenv.gov.tw/categories/green_office/steps" target="_blank">
+            綠色辦公響應指標及措施
+        </a>
+    </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<!-- 浮動回首頁（共用元件・藍色） -->
+<a href="https://jpesg.netlify.app/"
+   class="float-home-btn"
+   aria-label="回首頁">
+  <span class="icon">🏠</span>
+  <span class="label">回首頁</span>
+</a>
+
+<footer>
+© 2026 由景沛低碳管理方案團隊製作
+</footer>
 
 </body>
 </html>
-
-
