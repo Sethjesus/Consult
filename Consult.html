@@ -200,6 +200,23 @@ footer {
     .float-home-btn .icon{ font-size: 22px; }
     .float-home-btn .label{ font-size: 11px; }
 }
+/* ===== 手機版避免回首頁按鈕擋內容 ===== */
+@media (max-width: 768px) {
+
+    body {
+        padding-bottom: 180px; /* 給浮動按鈕 + footer 足夠空間 */
+    }
+
+    footer {
+        position: static;     /* 手機不固定 footer */
+        height: auto;
+        padding: 14px 10px;
+        font-size: 12px;      /* 字體一起優化（對應你第二個問題） */
+        line-height: 1.4;
+        text-align: center;
+    }
+}
+
 </style>
 </head>
 
